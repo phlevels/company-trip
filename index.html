@@ -11,7 +11,7 @@
 
       @media screen and (min-width: 1280px) {
         html {
-          font-size: 45%;
+          font-size: 40%;
         }
       }
 
@@ -142,6 +142,16 @@
     </style>
   </head>
   <body>
+    <!-- <iframe
+      src="audio.wav"
+      allow="autoplay"
+      style="display: none"
+      id="iframeAudio"
+    >
+    </iframe> -->
+    <audio id="player" autoplay loop>
+      <source src="audio.mp3" type="audio/mp3" />
+    </audio>
     <div id="slider">
       <div class="slide" style="background-image: url('01.jpg')">
         <img
