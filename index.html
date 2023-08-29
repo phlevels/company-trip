@@ -6,8 +6,27 @@
     <title>BaseBS</title>
     <style>
       html {
-        font-size: 62.5%;
+        font-size: 40%;
       }
+
+      @media screen and (min-width: 1280px) {
+        html {
+          font-size: 45%;
+        }
+      }
+
+      @media screen and (min-width: 1600px) {
+        html {
+          font-size: 55%;
+        }
+      }
+
+      @media screen and (min-width: 1700px) {
+        html {
+          font-size: 62.5%;
+        }
+      }
+
       body {
         margin: 0;
         padding: 0;
@@ -188,6 +207,7 @@
             animation: slideFromBottom 2s ease-in-out;
             width: 6.5rem;
             margin-top: 16px;
+            z-index: 10;
           "
           onclick="changeSlide(1);"
         />
@@ -266,6 +286,7 @@
             animation: slideFromBottom 2s ease-in-out;
             width: 6.5rem;
             margin-top: 16px;
+            z-index: 10;
           "
           onclick="changeSlide(2);"
         />
@@ -326,6 +347,7 @@
               animation: slideFromBottom 2s ease-in-out;
               width: 6.5rem;
               margin-top: 16px;
+              z-index: 10;
             "
             onclick="changeSlide(1);"
           />
