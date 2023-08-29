@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BaseBS</title>
+    <style>
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      #hiddenElement5,
+      #hiddenElement10,
+      #hiddenElement14 {
+        opacity: 0;
+      }
+
+      #hiddenElement1,
+      #hiddenElement2,
+      #hiddenElement3,
+      #hiddenElement4,
+      #hiddenElement6,
+      #hiddenElement7,
+      #hiddenElement8,
+      #hiddenElement9,
+      #hiddenElement11,
+      #hiddenElement12,
+      #hiddenElement13,
+      #hiddenElement15,
+      #hiddenElement16,
+      #hiddenElement17 {
+        display: none;
+      }
+
+      #slider {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        transition: transform 1s;
+      }
+      .slide {
+        flex: 0 0 100vw;
+        width: 100vw;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        img {
+          object-fit: cover;
+        }
+      }
+
+      @keyframes easeInOutAnimation {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+
+        90% {
+          transform: scale(1.5);
+          opacity: 1;
+          visibility: visible;
+        }
+
+        100% {
+          transform: scale(1);
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      @keyframes slideFromTop {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideFromBottom {
+        0% {
+          transform: translateY(100%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideFromLeft {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideFromRight {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .inactive-slide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="slider">
+      <div class="slide" style="background-image: url('01.jpg')">
+        <img
+          id="hiddenElement1"
+          src="Hoa1-1.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: easeInOutAnimation 0.5s ease-in-out;
+            width: 60rem;
+          "
+        />
+        <img
+          id="hiddenElement2"
+          src="Hoa1-2.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: easeInOutAnimation 0.5s ease-in-out;
+            width: 40rem;
+          "
+        />
+        <img
+          id="hiddenElement3"
+          src="Hoa1-3.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            animation: easeInOutAnimation 0.5s ease-in-out;
+            width: 70rem;
+          "
+        />
+        <img
+          id="hiddenElement4"
+          src="Hoa1-4.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            top: 0;
+            right: 0;
+            animation: easeInOutAnimation 0.5s ease-in-out;
+            width: 60rem;
+          "
+        />
+
+        <img
+          src="Text1-1.png"
+          alt="hoa"
+          style="animation: slideFromBottom 0.5s ease-in-out; width: 92rem"
+        />
+
+        <img
+          id="hiddenElement5"
+          src="Next.png"
+          alt="next"
+          style="
+            animation: slideFromBottom 2s ease-in-out;
+            width: 6.5rem;
+            margin-top: 16px;
+          "
+          onclick="changeSlide(1);"
+        />
+      </div>
+
+      <div class="slide inactive-slide" style="background-image: url('01.jpg')">
+        <img
+          id="hiddenElement6"
+          src="Hoa2-1.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: easeInOutAnimation 0.8s ease-in-out;
+            width: 55rem;
+          "
+        />
+        <img
+          id="hiddenElement7"
+          src="Hoa2-2.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            animation: easeInOutAnimation 0.8s ease-in-out;
+            width: 80rem;
+          "
+        />
+        <img
+          id="hiddenElement8"
+          src="Hoa2-3.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            top: 10rem;
+            right: 0;
+            animation: easeInOutAnimation 0.8s ease-in-out;
+            width: 50rem;
+            height: 30rem;
+          "
+        />
+        <img
+          id="hiddenElement9"
+          src="Text2.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: easeInOutAnimation 0.8s ease-in-out;
+            width: 25rem;
+            margin: 4.2rem 0 0 3.4rem;
+          "
+        />
+
+        <img
+          id="hiddenElement15"
+          src="Ve2-1.png"
+          alt="hoa"
+          style="animation: slideFromLeft 0.8s ease-in-out; width: 92rem"
+        />
+        <img
+          id="hiddenElement16"
+          src="Ve2-2.png"
+          alt="hoa"
+          style="animation: slideFromRight 0.8s ease-in-out; width: 92rem"
+        />
+
+        <img
+          id="hiddenElement10"
+          src="Next.png"
+          alt="next"
+          style="
+            animation: slideFromBottom 2s ease-in-out;
+            width: 6.5rem;
+            margin-top: 16px;
+          "
+          onclick="changeSlide(2);"
+        />
+      </div>
+
+      <div class="slide inactive-slide" style="background-image: url('01.jpg')">
+        <img
+          id="hiddenElement11"
+          src="Hoa3-1.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: easeInOutAnimation 0.8s ease-in-out;
+            width: 65rem;
+          "
+        />
+        <img
+          id="hiddenElement12"
+          src="Hoa3-2.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            animation: easeInOutAnimation 0.8s ease-in-out;
+            width: 70rem;
+          "
+        />
+        <img
+          id="hiddenElement13"
+          src="Text2.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: easeInOutAnimation 0.8s ease-in-out;
+            width: 25rem;
+            margin: 4.2rem 0 0 3.4rem;
+          "
+        />
+
+        <img
+          id="hiddenElement17"
+          src="Agenda.png"
+          alt="agenda"
+          style="animation: slideFromTop 1s ease-in-out; width: 85rem"
+        />
+
+        <div>
+          <img
+            id="hiddenElement14"
+            src="Prev.png"
+            alt="prev"
+            style="
+              animation: slideFromBottom 2s ease-in-out;
+              width: 6.5rem;
+              margin-top: 16px;
+            "
+            onclick="changeSlide(1);"
+          />
+        </div>
+      </div>
+    </div>
+    <script>
+      const slider = document.getElementById("slider");
+      const slides = document.querySelectorAll(".slide");
+
+      function showSlide(slideIndex) {
+        slider.style.transform = `translateX(-${slideIndex * 100}vw)`;
+      }
+
+      function changeSlide(slideIndex) {
+        showSlide(slideIndex);
+        const hiddenElement6 = document.getElementById("hiddenElement6");
+        const hiddenElement7 = document.getElementById("hiddenElement7");
+        const hiddenElement8 = document.getElementById("hiddenElement8");
+        const hiddenElement9 = document.getElementById("hiddenElement9");
+        const hiddenElement10 = document.getElementById("hiddenElement10");
+        const hiddenElement11 = document.getElementById("hiddenElement11");
+        const hiddenElement12 = document.getElementById("hiddenElement12");
+        const hiddenElement13 = document.getElementById("hiddenElement13");
+        const hiddenElement14 = document.getElementById("hiddenElement14");
+        const hiddenElement15 = document.getElementById("hiddenElement15");
+        const hiddenElement16 = document.getElementById("hiddenElement16");
+        const hiddenElement17 = document.getElementById("hiddenElement17");
+
+        slides.forEach((slide, idx) => {
+          slide.classList.remove("active-slide");
+          if (idx === slideIndex) {
+            setTimeout(() => {
+              slide.classList.remove("inactive-slide");
+            }, 100);
+          }
+
+          if (slideIndex === 1) {
+            //image2
+            setTimeout(() => {
+              hiddenElement15.style.display = "inline-block";
+            }, 800);
+
+            setTimeout(() => {
+              hiddenElement16.style.display = "inline-block";
+            }, 800);
+
+            setTimeout(() => {
+              hiddenElement6.style.display = "block";
+            }, 1000);
+
+            setTimeout(() => {
+              hiddenElement7.style.display = "block";
+            }, 1100);
+
+            setTimeout(() => {
+              hiddenElement8.style.display = "block";
+            }, 1200);
+
+            setTimeout(() => {
+              hiddenElement9.style.display = "block";
+            }, 1300);
+
+            setTimeout(() => {
+              hiddenElement10.style.opacity = 1;
+            }, 1500);
+            //image2
+          }
+
+          if (slideIndex === 2) {
+            //image3
+            setTimeout(() => {
+              hiddenElement17.style.display = "inline-block";
+            }, 800);
+
+            setTimeout(() => {
+              hiddenElement11.style.display = "block";
+            }, 1000);
+
+            setTimeout(() => {
+              hiddenElement12.style.display = "block";
+            }, 1400);
+
+            setTimeout(() => {
+              hiddenElement13.style.display = "block";
+            }, 1700);
+
+            setTimeout(() => {
+              hiddenElement14.style.opacity = 1;
+            }, 1300);
+            //image3
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const hiddenElement1 = document.getElementById("hiddenElement1");
+        const hiddenElement2 = document.getElementById("hiddenElement2");
+        const hiddenElement3 = document.getElementById("hiddenElement3");
+        const hiddenElement4 = document.getElementById("hiddenElement4");
+        const hiddenElement5 = document.getElementById("hiddenElement5");
+
+        //image1
+        setTimeout(() => {
+          hiddenElement1.style.display = "block";
+        }, 500);
+
+        setTimeout(() => {
+          hiddenElement2.style.display = "block";
+        }, 600);
+
+        setTimeout(() => {
+          hiddenElement3.style.display = "block";
+        }, 700);
+
+        setTimeout(() => {
+          hiddenElement4.style.display = "block";
+        }, 800);
+
+        setTimeout(() => {
+          hiddenElement5.style.opacity = 1;
+        }, 1000);
+        //image1
+
+        // //image2
+        // setTimeout(() => {
+        //   hiddenElement6.style.display = "block";
+        // }, 3400);
+
+        // setTimeout(() => {
+        //   hiddenElement7.style.display = "block";
+        // }, 3600);
+
+        // setTimeout(() => {
+        //   hiddenElement8.style.display = "block";
+        // }, 3800);
+
+        // setTimeout(() => {
+        //   hiddenElement9.style.display = "block";
+        // }, 4000);
+
+        // setTimeout(() => {
+        //   hiddenElement15.style.display = "inline-block";
+        // }, 3200);
+
+        // setTimeout(() => {
+        //   hiddenElement16.style.display = "inline-block";
+        // }, 3200);
+
+        // setTimeout(() => {
+        //   hiddenElement10.style.opacity = 1;
+        // }, 4000);
+        // //image2
+
+        // //image3
+        // setTimeout(() => {
+        //   hiddenElement11.style.display = "block";
+        // }, 3400);
+
+        // setTimeout(() => {
+        //   hiddenElement12.style.display = "block";
+        // }, 3600);
+
+        // setTimeout(() => {
+        //   hiddenElement13.style.display = "block";
+        // }, 3800);
+
+        // setTimeout(() => {
+        //   hiddenElement17.style.display = "inline-block";
+        // }, 3300);
+
+        // setTimeout(() => {
+        //   hiddenElement14.style.opacity = 1;
+        // }, 4000);
+        // //image3
+      });
+    </script>
+  </body>
+</html>
