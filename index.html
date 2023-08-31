@@ -146,6 +146,31 @@
           transform: translateY(0);
         }
       }
+      @keyframes headshake {
+        0% {
+          transform: translateX(0);
+        }
+
+        3.25% {
+          transform: translateX(-6px) rotateY(-9deg);
+        }
+
+        9.25% {
+          transform: translateX(5px) rotateY(7deg);
+        }
+
+        15.75% {
+          transform: translateX(-3px) rotateY(-5deg);
+        }
+
+        21.75% {
+          transform: translateX(2px) rotateY(3deg);
+        }
+
+        25% {
+          transform: translateX(0);
+        }
+      }
 
       .inactive-slide {
         display: none;
@@ -223,6 +248,7 @@
               right: -3rem;
               bottom: 32rem;
               width: 41rem;
+              animation: headshake 3s cubic-bezier(0.445, 0.05, 0.55, 0.95) 50;
             "
             onclick="changeSlide(1); document.getElementById('audio').play()"
           />
