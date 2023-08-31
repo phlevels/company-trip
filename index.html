@@ -35,7 +35,8 @@
 
       #hiddenElement5,
       #hiddenElement10,
-      #hiddenElement14 {
+      #hiddenElement14,
+      #hiddenElement24 {
         opacity: 0;
       }
 
@@ -52,7 +53,17 @@
       #hiddenElement13,
       #hiddenElement15,
       #hiddenElement16,
-      #hiddenElement17 {
+      #hiddenElement17,
+      #hiddenElement18,
+      #hiddenElement19,
+      #hiddenElement20,
+      #hiddenElement21,
+      #hiddenElement22,
+      #hiddenElement23,
+      #hiddenElement25,
+      #hiddenElement26,
+      #hiddenElement27,
+      #hiddenElement28 {
         display: none;
       }
 
@@ -147,7 +158,78 @@
     </audio>
 
     <div id="slider">
-      <div class="slide" style="background-image: url('01.jpg')">
+      <div class="slide" style="background-image: url('BG1.jpg')">
+        <img
+          id="hiddenElement25"
+          src="Frame1.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: easeInOutAnimation 0.5s ease-in-out;
+            width: 40rem;
+          "
+        />
+        <img
+          id="hiddenElement26"
+          src="Frame2.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: easeInOutAnimation 0.5s ease-in-out;
+            width: 50rem;
+          "
+        />
+
+        <img
+          id="hiddenElement27"
+          src="Frame3.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            animation: easeInOutAnimation 0.5s ease-in-out;
+            width: 70rem;
+          "
+        />
+        <img
+          id="hiddenElement28"
+          src="Frame4.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            top: 0;
+            right: 0;
+            animation: easeInOutAnimation 0.5s ease-in-out;
+            width: 70rem;
+          "
+        />
+
+        <div
+          style="
+            position: relative;
+            animation: slideFromBottom 0.5s ease-in-out;
+          "
+        >
+          <img src="Bia1.png" alt="hoa" style="width: 80rem" />
+          <img
+            src="Button.png"
+            style="
+              position: absolute;
+              right: -3rem;
+              bottom: 32rem;
+              width: 41rem;
+            "
+            onclick="changeSlide(1); document.getElementById('audio').play()"
+          />
+        </div>
+      </div>
+
+      <div class="slide inactive-slide" style="background-image: url('01.jpg')">
         <img
           id="hiddenElement1"
           src="Hoa1-1.png"
@@ -213,7 +295,7 @@
             margin-top: 16px;
             z-index: 10;
           "
-          onclick="changeSlide(1); document.getElementById('audio').play()"
+          onclick="changeSlide(2);"
         />
       </div>
 
@@ -292,7 +374,90 @@
             margin-top: 16px;
             z-index: 10;
           "
-          onclick="changeSlide(2);"
+          onclick="changeSlide(3);"
+        />
+      </div>
+
+      <div class="slide inactive-slide" style="background-image: url('01.jpg')">
+        <img
+          id="hiddenElement18"
+          src="Hoa2-1.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: easeInOutAnimation 0.8s ease-in-out;
+            width: 55rem;
+          "
+        />
+        <img
+          id="hiddenElement19"
+          src="Hoa2-2.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            animation: easeInOutAnimation 0.8s ease-in-out;
+            width: 80rem;
+          "
+        />
+        <img
+          id="hiddenElement20"
+          src="Hoa2-3.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            top: 10rem;
+            right: 0;
+            animation: easeInOutAnimation 0.8s ease-in-out;
+            width: 50rem;
+            height: 30rem;
+          "
+        />
+        <img
+          id="hiddenElement21"
+          src="Text2.png"
+          alt="hoa"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: easeInOutAnimation 0.8s ease-in-out;
+            width: 25rem;
+            margin: 4.2rem 0 0 3.4rem;
+          "
+        />
+
+        <img
+          id="hiddenElement22"
+          src="Ve3-1.png"
+          alt="hoa"
+          style="
+            animation: slideFromRight 0.8s ease-in-out;
+            width: 92rem;
+            margin-bottom: 1rem;
+          "
+        />
+        <img
+          id="hiddenElement23"
+          src="Ve3-2.png"
+          alt="hoa"
+          style="animation: slideFromLeft 0.8s ease-in-out; width: 92rem"
+        />
+
+        <img
+          id="hiddenElement24"
+          src="Next.png"
+          alt="next"
+          style="
+            animation: slideFromBottom 2s ease-in-out;
+            width: 6.5rem;
+            margin-top: 16px;
+            z-index: 10;
+          "
+          onclick="changeSlide(4);"
         />
       </div>
 
@@ -353,7 +518,7 @@
               margin-top: 16px;
               z-index: 10;
             "
-            onclick="changeSlide(1);"
+            onclick="changeSlide(3);"
           />
         </div>
       </div>
@@ -368,6 +533,12 @@
 
       function changeSlide(slideIndex) {
         showSlide(slideIndex);
+        const hiddenElement1 = document.getElementById("hiddenElement1");
+        const hiddenElement2 = document.getElementById("hiddenElement2");
+        const hiddenElement3 = document.getElementById("hiddenElement3");
+        const hiddenElement4 = document.getElementById("hiddenElement4");
+        const hiddenElement5 = document.getElementById("hiddenElement5");
+        //
         const hiddenElement6 = document.getElementById("hiddenElement6");
         const hiddenElement7 = document.getElementById("hiddenElement7");
         const hiddenElement8 = document.getElementById("hiddenElement8");
@@ -381,6 +552,15 @@
         const hiddenElement16 = document.getElementById("hiddenElement16");
         const hiddenElement17 = document.getElementById("hiddenElement17");
 
+        //
+        const hiddenElement18 = document.getElementById("hiddenElement18");
+        const hiddenElement19 = document.getElementById("hiddenElement19");
+        const hiddenElement20 = document.getElementById("hiddenElement20");
+        const hiddenElement21 = document.getElementById("hiddenElement21");
+        const hiddenElement22 = document.getElementById("hiddenElement22");
+        const hiddenElement23 = document.getElementById("hiddenElement23");
+        const hiddenElement24 = document.getElementById("hiddenElement24");
+
         slides.forEach((slide, idx) => {
           slide.classList.remove("active-slide");
           if (idx === slideIndex) {
@@ -390,6 +570,30 @@
           }
 
           if (slideIndex === 1) {
+            //image1
+            setTimeout(() => {
+              hiddenElement1.style.display = "block";
+            }, 500);
+
+            setTimeout(() => {
+              hiddenElement2.style.display = "block";
+            }, 600);
+
+            setTimeout(() => {
+              hiddenElement3.style.display = "block";
+            }, 700);
+
+            setTimeout(() => {
+              hiddenElement4.style.display = "block";
+            }, 800);
+
+            setTimeout(() => {
+              hiddenElement5.style.opacity = 1;
+            }, 1000);
+            //image1
+          }
+
+          if (slideIndex === 2) {
             //image2
             setTimeout(() => {
               hiddenElement15.style.display = "inline-block";
@@ -421,7 +625,39 @@
             //image2
           }
 
-          if (slideIndex === 2) {
+          if (slideIndex === 3) {
+            //image2
+            setTimeout(() => {
+              hiddenElement22.style.display = "inline-block";
+            }, 800);
+
+            setTimeout(() => {
+              hiddenElement23.style.display = "inline-block";
+            }, 800);
+
+            setTimeout(() => {
+              hiddenElement18.style.display = "block";
+            }, 1000);
+
+            setTimeout(() => {
+              hiddenElement19.style.display = "block";
+            }, 1100);
+
+            setTimeout(() => {
+              hiddenElement20.style.display = "block";
+            }, 1200);
+
+            setTimeout(() => {
+              hiddenElement21.style.display = "block";
+            }, 1300);
+
+            setTimeout(() => {
+              hiddenElement24.style.opacity = 1;
+            }, 1500);
+            //image2
+          }
+
+          if (slideIndex === 4) {
             //image3
             setTimeout(() => {
               hiddenElement17.style.display = "inline-block";
@@ -448,32 +684,28 @@
       }
 
       document.addEventListener("DOMContentLoaded", () => {
-        const hiddenElement1 = document.getElementById("hiddenElement1");
-        const hiddenElement2 = document.getElementById("hiddenElement2");
-        const hiddenElement3 = document.getElementById("hiddenElement3");
-        const hiddenElement4 = document.getElementById("hiddenElement4");
-        const hiddenElement5 = document.getElementById("hiddenElement5");
+        const hiddenElement25 = document.getElementById("hiddenElement25");
+        const hiddenElement26 = document.getElementById("hiddenElement26");
+        const hiddenElement27 = document.getElementById("hiddenElement27");
+        const hiddenElement28 = document.getElementById("hiddenElement28");
 
         //image1
         setTimeout(() => {
-          hiddenElement1.style.display = "block";
+          hiddenElement25.style.display = "block";
         }, 500);
 
         setTimeout(() => {
-          hiddenElement2.style.display = "block";
+          hiddenElement26.style.display = "block";
         }, 600);
 
         setTimeout(() => {
-          hiddenElement3.style.display = "block";
+          hiddenElement27.style.display = "block";
         }, 700);
 
         setTimeout(() => {
-          hiddenElement4.style.display = "block";
+          hiddenElement28.style.display = "block";
         }, 800);
 
-        setTimeout(() => {
-          hiddenElement5.style.opacity = 1;
-        }, 1000);
         //image1
       });
     </script>
